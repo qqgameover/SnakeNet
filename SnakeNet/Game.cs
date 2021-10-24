@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SnakeNet
 {
-    class Game
+    public class Game
     {
+        internal Snake Player { get; set; }
+        internal Board GameBoard { get; set; }
+        public Game()
+        {
+            Player = new Snake();
+            GameBoard = new Board(40, 40);
+        }
     }
 }

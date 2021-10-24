@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeNet
 {
-    class Food
+    public class Food
     {
     }
 }
