@@ -7,6 +7,10 @@ namespace SnakeNet
         static void Main(string[] args)
         {
             var game = new Game();
+            while (true)
+            {
+                game.DrawBoard();
+            }
         }
     }
 }
