@@ -27,7 +27,7 @@ namespace SnakeNet
             if(x == 1) GenerateNewFood();
             DrawTheSnake();
             GameBoard.DrawBoard();
-            Thread.Sleep(300);
+            Thread.Sleep(100);
         }
 
         public void GenerateNewFood()
