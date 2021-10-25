@@ -10,11 +10,15 @@ namespace SnakeNet
     public class Game
     {
         internal Snake Player { get; set; }
+        internal int BoardHeight { get; set; }
+        internal int BoardWidth { get; set; }
         internal Board GameBoard { get; set; }
-        public Game()
+        public Game(int height, int width)
         {
-            Player = new Snake();
-            GameBoard = new Board(20, 40);
+            BoardHeight = height;
+            BoardWidth = width;
+            GameBoard = new Board(height, width);
+            Player = new Snake(height, width);
         }
 
         public void DrawBoard()
