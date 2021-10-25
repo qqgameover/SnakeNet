@@ -10,6 +10,7 @@ namespace SnakeNet
     {
         public int[,] BoardArray { get; set; }
         private Food CurrentFood { get; set; }
+        internal int TickCount { get; set; }
 
         public Board(int height, int width)
         {
@@ -42,6 +43,7 @@ namespace SnakeNet
             Console.SetCursorPosition(0, 0);
             Console.CursorVisible = false;
             ClearBoard();
+            TickCount++;
             for (int i = 0; i < BoardArray.GetLength(0); i++)
             {
                 if(i != 0) Console.WriteLine();
