@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeNet
 {
-    internal class Board
+    public class Board
     {
         public int[,] BoardArray { get; set; }
         private Food CurrentFood { get; set; }
@@ -69,6 +69,7 @@ namespace SnakeNet
         public void SetNewFood()
         {
             CurrentFood = new Food(BoardArray.GetLength(0) - 1, BoardArray.GetLength(1) - 1);
+            BoardArray[CurrentFood.FoodPosY, CurrentFood.FoodPosX] = 2;
         }
     }
 }

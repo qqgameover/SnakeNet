@@ -23,15 +23,11 @@ namespace SnakeNet
 
         public void DrawBoard()
         {
-            Player.MoveSnake();
+            var x = Player.MoveSnake(GameBoard.BoardArray);
+            if(x == 1) GenerateNewFood();
             DrawTheSnake();
             GameBoard.DrawBoard();
-            Thread.Sleep(400);
-        }
-
-        private void GetNewTail()
-        {
-            
+            Thread.Sleep(300);
         }
 
         public void GenerateNewFood()
@@ -42,14 +38,14 @@ namespace SnakeNet
         public void DrawTheSnake()
         {
             GameBoard.BoardArray[Player.SnakeList[0], Player.SnakeList[1]] = 1;
-            TerjeHjelpMeg();
+            CheckSnakeLng();
         }
 
-        public void TerjeHjelpMeg()
+        public void CheckSnakeLng()
         {
             if (Player.SnakeList.Count < Player.SnakeLength * 2) return;
-            GameBoard.BoardArray[Player.SnakeList[Player.SnakeList.Count - 2],
-                Player.SnakeList[Player.SnakeList.Count - 1]] = 0;
+            GameBoard.BoardArray[Player.SnakeList[^2],
+                Player.SnakeList[^1]] = 0;
             Player.SnakeList.RemoveRange(Player.SnakeList.Count - 2, 2);
         }
     }

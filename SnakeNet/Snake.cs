@@ -23,12 +23,20 @@ namespace SnakeNet
             SnakeLength = 4;
             SnakeList = new List<int>();
         }
-        public void MoveSnake()
+        public int MoveSnake(int [,] boardArray)
         {
+            var bigger = 0;
+            if (boardArray[SnakeHeadPosY + SnakeDirectionY, SnakeDirectionX + SnakeHeadPosX] == 2)
+            {
+                SnakeLength++;
+                bigger = 1;
+            }
+            if (boardArray[SnakeHeadPosY + SnakeDirectionY, SnakeDirectionX + SnakeHeadPosX] == 1 && SnakeLength > 4) Environment.Exit(0);
             SnakeHeadPosY += SnakeDirectionY;
             SnakeHeadPosX += SnakeDirectionX;
             SnakeList.Insert(0,SnakeHeadPosX);
-            SnakeList.Insert(0, SnakeHeadPosY);
+            SnakeList.Insert(0,SnakeHeadPosY);
+            return bigger;
         }
 
         public void HandleInput()
