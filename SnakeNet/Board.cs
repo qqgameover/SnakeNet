@@ -63,5 +63,10 @@ namespace SnakeNet
         {
             BoardArray[y, x] = 2;
         }
+
+        public void SetNewFood()
+        {
+            CurrentFood = new Food(BoardArray.GetLength(0) - 1, BoardArray.GetLength(1) - 1);
+        }
     }
 }

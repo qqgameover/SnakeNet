@@ -22,5 +22,10 @@ namespace SnakeNet
             GameBoard.DrawBoard();
             Thread.Sleep(400);
         }
+
+        public void GenerateNewFood()
+        {
+            GameBoard.SetNewFood();
+        }
     }
 }

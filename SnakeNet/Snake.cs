@@ -8,5 +8,12 @@ namespace SnakeNet
 {
     internal class Snake
     {
+        private int SnakeHeadPosY { get; set; }
+        private int SnakeHeadPosX { get; set; }
+
+        public Snake()
+        {
+
+        }
     }
 }
