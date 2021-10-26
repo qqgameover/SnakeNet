@@ -44,6 +44,11 @@ namespace SnakeNet
         public void CheckSnakeLng()
         {
             if (Player.SnakeList.Count < Player.SnakeLength * 2) return;
+            CutSnakeTail();
+        }
+
+        private void CutSnakeTail()
+        {
             GameBoard.BoardArray[Player.SnakeList[^2],
                 Player.SnakeList[^1]] = 0;
             Player.SnakeList.RemoveRange(Player.SnakeList.Count - 2, 2);
