@@ -46,7 +46,6 @@ namespace SnakeNet
             if (Player.SnakeList.Count < Player.SnakeLength * 2) return;
             CutSnakeTail();
         }
-
         private void CutSnakeTail()
         {
             GameBoard.BoardArray[Player.SnakeList[^2],
